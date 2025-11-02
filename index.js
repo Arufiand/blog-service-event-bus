@@ -13,22 +13,8 @@ app.post('/events', async (req, res) => {
 
     await axios.post('http://localhost:4000/events', event);
     await axios.post('http://localhost:4001/events', event);
-    await axios.post('http://localhost:4002/events', event);
 
     res.status(201).send('success');
-
-    // const { type, data } = req.body;
-    //
-    // if (type === 'PostCreated') {
-    //     const { id, title } = data;
-    //     try {
-    //         await axios.post('http://localhost:4000/posts', { id, title });
-    //     } catch (error) {
-    //         console.error('Error forwarding PostCreated event:', error.message);
-    //     }
-    // }
-    //
-    // res.send({});
 });
 
 app.listen(port, () => {
